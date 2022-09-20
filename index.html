@@ -59,7 +59,7 @@
 	<div id="container">
 		<p id="orientation-status"></p>
 		<div id="buttons-container">
-			<button id="lock-landscape-button">Lock to Landscape Mode ini bro</button>
+			<button id="lock-landscape-button">Click To Play</button>
 			<button id="unlock-button">Unlock</button>
 		</div>
 	</div>
@@ -76,8 +76,8 @@
 		window.addEventListener('load', function () {
 			if (document.documentElement.requestFullscreen)
 				document.querySelector("#container").requestFullscreen();
-			// else if (document.documentElement.webkitRequestFullScreen)
-			// 	document.querySelector("#container").webkitRequestFullScreen();
+			else if (document.documentElement.webkitRequestFullScreen)
+				document.querySelector("#container").webkitRequestFullScreen();
 
 			screen.orientation.lock("landscape-primary")
 				.then(function () {

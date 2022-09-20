@@ -72,8 +72,12 @@
 		_STATUS.innerHTML = screen.orientation.type + ' mode';
 
 		// upon lock to landscape-primary mode
-		_LOCK_BUTTON.addEventListener('click', function () {
-			// window.addEventListener('load', function () {
+		// _LOCK_BUTTON.addEventListener('click', function () {
+		// window.addEventListener('load', function () {
+		window.addEventListener('load', function () {
+			setTimeout(cobaPutar, 5000);
+		})
+		const cobaPutar = () => {
 			if (document.documentElement.requestFullscreen)
 				document.querySelector("#container").requestFullscreen();
 			else if (document.documentElement.webkitRequestFullScreen)
@@ -87,7 +91,7 @@
 				.catch(function (error) {
 					alert(error);
 				});
-		});
+		};
 
 		// upon unlock
 		document.querySelector("#unlock-button").addEventListener('click', function () {
